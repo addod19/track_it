@@ -15,9 +15,9 @@ class UsersController < ApplicationController
 
   def signin
     @user = User.find_by(email: params[:email])
-
+    p @user
     if @user && @user.authenticate(params[:password])
-      toekn = encode_token({ user_id: @user.id})
+      token = encode_token({ user_id: @user.id})
       render json: { user: @user, token:token }
     else
       render json: { error: @user.errors.full_messages }
