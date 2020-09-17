@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authorized, only[:user_login]
-  before_action :logged_in_user, only[:auth]
+  before_action :authorized, only: [:user_login]
+  before_action :logged_in_user, only: [:auth]
 
   def create
     @user = User.create(user_params)
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(name, email, password)
+    params.permit(:name, :email, :password)
   end
   
 end
