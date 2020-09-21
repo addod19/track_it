@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :waters
   post '/signup', to: 'users#create'
   post '/signin', to: 'users#signin'
-  get '/user_login', to: 'users#user_login'
+  get '/auto_login', to: 'users#auto_login'
 end
