@@ -23,8 +23,15 @@
 
 ## Built With
 
+<<<<<<< HEAD
 - React
 - Javascript es6
+=======
+- Ruby
+- Ruby on Rails API
+- Heroku
+- Postgresql
+>>>>>>> 78153073d060f9a61fb8657d2ef55957aa756996
 
 ## Live Demo
 
