@@ -23,8 +23,10 @@
 
 ## Built With
 
-- React
-- Javascript es6
+- Ruby
+- Ruby on Rails API
+- Heroku
+- Postgresql
 
 ## Live Demo
 
