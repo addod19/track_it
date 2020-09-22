@@ -30,7 +30,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://frozen-forest-96999.herokuapp.com/)
 
 ## Getting Started
 
@@ -85,8 +85,8 @@ To get a local copy up and running follow these simple example steps.
 ### Deployment
 
 - `Heroku create`
-- `Heroku run rails db:migrate`
 - `git push heroku master`
+- `Heroku run rails db:migrate`
 - `Heroku open`
 
 ## Authors
