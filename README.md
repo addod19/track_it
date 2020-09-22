@@ -23,15 +23,10 @@
 
 ## Built With
 
-<<<<<<< HEAD
-- React
-- Javascript es6
-=======
 - Ruby
 - Ruby on Rails API
 - Heroku
 - Postgresql
->>>>>>> 78153073d060f9a61fb8657d2ef55957aa756996
 
 ## Live Demo
 
@@ -58,9 +53,9 @@ To get a local copy up and running follow these simple example steps.
 
 - To testing the signup page, copy this link into the URL `http://localhost:3000/signup`
 - Navigate to the params tab, input the key value pairs
-  - `name: "Daniel"`
-  - `email: "Dan@gamil.com"`
-  - `password: "dan@12345"`
+  - `name: "Janet"`
+  - `email: "janet100@gmail.com"`
+  - `password: "janet@12345"`
 - After clicking `send` we either expect a success or failure message, in our case `success` message as seen below: We expect a `json` response in the format
 ```
 {
@@ -89,7 +84,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-- Heroku
+- `Heroku create`
+- `Heroku run rails db:migrate`
+- `git push heroku master`
+- `Heroku open`
 
 ## Authors
 
