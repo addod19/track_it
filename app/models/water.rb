@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Water < ApplicationRecord
   belongs_to :user
 
@@ -9,7 +11,7 @@ class Water < ApplicationRecord
   validates :total, presence: true
   validates :user_id, presence: true
 
-  def self.progress_calculation water
+  def self.progress_calculation(water)
     hash = {}
     hash['amount'] = water.inject(0) { |sum, v| sum + v.amount }
     hash
