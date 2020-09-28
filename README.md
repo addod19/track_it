@@ -30,7 +30,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://frozen-forest-96999.herokuapp.com/)
+[Live Demo Link](https://nameless-badlands-46087.herokuapp.com/)
 
 ## Getting Started
 
