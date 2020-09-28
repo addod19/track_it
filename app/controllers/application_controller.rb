@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ApplicationController < ActionController::API
   before_action :authorized
 
@@ -8,7 +6,8 @@ class ApplicationController < ActionController::API
   end
 
   def decode_token
-    if auth_header
+    return unless auth_header
+    # if auth_header
       token = auth_header.split(' ')[1]
 
       begin
@@ -24,7 +23,7 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in_user
-    if decoded_token
+    return unless decoded_token
       user_id = decoded_token[0]['user_id']
       @user = User.find_by(id: user_id)
     end
@@ -36,9 +35,8 @@ class ApplicationController < ActionController::API
 
   def authorized
     unless logged_in?
-      unless logged_in?
-        render json: { message: 'Kindly log in before using the App' }, status: :unauthorized
-      end
+      render json: { message: 'Kindly log in before using the App' }, status: :unauthorized unless logged_in?
     end
   end
+  
 end

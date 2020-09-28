@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   put '/update/:id', to: 'waters#update'
   delete '/destroy/:id', to: 'waters#destroy'
   get 'water_progress', to: 'waters#water_level_progress'
-  
+
   post '/signup', to: 'users#create'
   post '/signin', to: 'users#signin'
   get '/auto_login', to: 'users#auto_login'
