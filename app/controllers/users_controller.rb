@@ -13,16 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def signin
-    @user = User.find_by(email: params[:email])
-    if @user&.authenticate(params[:password_digest])
-      token = encode_token({ user_id: @user.id })
-      render json: { user: @user, token: token }
-    else
-      render json: { error: @user.errors.full_messages }
-    end
-  end
-
   def auto_login
     render json: @user
   end
