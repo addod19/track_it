@@ -1,42 +1,13 @@
 class ApplicationController < ActionController::API
-  before_action :authorized
+  include Response
+  include ExceptionHandler
 
-  def encode_token(payload)
-    JWT.encode(payload, 'hidd3n')
+  before_action :authorize_request
+  attr_reader :current_user
+
+  private
+
+  def authorize_request
+    @current_user = AuthorizeApiRequest.new(request.headers).call[:user]
   end
-
-  def decode_token
-    return unless auth_header
-    # if auth_header
-      token = auth_header.split(' ')[1]
-
-      begin
-        JWT.decode(token, 'hidd3n', true, algorithm: 'HS256')
-      rescue JWT::DecodeError
-        nil
-      end
-    end
-  end
-
-  def auth_header
-    request.headers['Authorization']
-  end
-
-  def logged_in_user
-    return unless decoded_token
-      user_id = decoded_token[0]['user_id']
-      @user = User.find_by(id: user_id)
-    end
-  end
-
-  def logged_in?
-    !!logged_in_user
-  end
-
-  def authorized
-    unless logged_in?
-      render json: { message: 'Kindly log in before using the App' }, status: :unauthorized unless logged_in?
-    end
-  end
-  
 end

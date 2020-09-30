@@ -6,13 +6,9 @@ class Water < ApplicationRecord
     where(user_id: id)
   }
 
+  scope :order_water_data, -> { user_water(@current_user.id).order(:created_at, :desc) }
+
   validates :amount, presence: true
   validates :total, presence: true
   validates :user_id, presence: true
-
-  def self.progress_calculation(water)
-    hash = {}
-    hash['amount'] = water.inject(0) { |sum, v| sum + v.amount }
-    hash
-  end
 end

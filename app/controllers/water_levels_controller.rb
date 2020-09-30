@@ -1,9 +1,9 @@
 class WaterLevelsController < ApplicationController
-  before_action :logged_in_user
+  skip_before_action :authorize_request, only: :authenticate
   
   def progress
-    water = Water.user_water(logged_in_user.id).order(:created_at, :desc)
+    water = Water.order_water_data
     progress_data = Water.progress_calculation(water)
-    render json: { water_level_progress: progress_data }
+    render json: { progress: progress_data }
   end
 end
