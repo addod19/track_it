@@ -762,3 +762,142 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mUser Load (47.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "larbi27@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (408.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Larbi"], ["email", "larbi27@gmail.com"], ["password_digest", "$2a$12$K4.dHj0gH7Pe2R/epu.cmOYryVQsK/TyE2L8VwANeHeSgjMqHT8XO"], ["created_at", "2020-09-30 07:51:21.622553"], ["updated_at", "2020-09-30 07:51:21.622553"]]
+  [1m[35m (374.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 07:55:15 +0000
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:01:07 +0000
+  [1m[35m (114.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"mob larbi", "email"=>"moblarbi@gmail.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms | Allocations: 60403)
+
+
+  
+NameError (undefined local variable or method `decoded_token' for #<UsersController:0x00005635c8bdc258>
+Did you mean?  decoded_hash):
+  
+app/controllers/application_controller.rb:16:in `session_user'
+app/controllers/application_controller.rb:25:in `logged_in?'
+app/controllers/application_controller.rb:29:in `require_login'
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:08:32 +0000
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"mob larbi", "email"=>"moblarbi@gmail.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 0.0ms | Allocations: 60372)
+
+
+  
+NameError (undefined local variable or method `decoded_auth_token' for #<UsersController:0x00007fbaf0b01208>
+Did you mean?  decoded_hash):
+  
+app/controllers/application_controller.rb:16:in `session_user'
+app/controllers/application_controller.rb:25:in `logged_in?'
+app/controllers/application_controller.rb:29:in `require_login'
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:09:02 +0000
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"mob larbi", "email"=>"moblarbi@gmail.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 307ms (ActiveRecord: 0.0ms | Allocations: 60402)
+
+
+  
+NameError (undefined local variable or method `decoded_auth_token' for #<UsersController:0x000055589ed0ecf0>
+Did you mean?  decoded_hash):
+  
+app/controllers/application_controller.rb:16:in `session_user'
+app/controllers/application_controller.rb:25:in `logged_in?'
+app/controllers/application_controller.rb:29:in `require_login'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raj23@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Raj"], ["email", "raj23@gmail.com"], ["password_digest", "$2a$12$Xshjmpgy5Wtxw9tQE71rxONxK7m0tRdaSCotF0pcOrT8h4/I1KkJa"], ["created_at", "2020-09-30 08:20:49.988530"], ["updated_at", "2020-09-30 08:20:49.988530"]]
+  [1m[35m (729.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:21:16 +0000
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:23:21 +0000
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"mob larbi", "email"=>"moblarbi@gmail.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 0.0ms | Allocations: 60402)
+
+
+  
+NameError (undefined local variable or method `decoded_auth_token' for #<UsersController:0x0000556f0aeb9528>
+Did you mean?  decoded_hash):
+  
+app/controllers/application_controller.rb:16:in `session_user'
+app/controllers/application_controller.rb:25:in `logged_in?'
+app/controllers/application_controller.rb:29:in `require_login'
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:26:13 +0000
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:26:42 +0000
+  
+NameError (uninitialized constant ApplicationController::Response):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started POST "/signup?name=mob%20larbi&email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:50:24 +0000
+  [1m[35m (17.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"mob larbi", "email"=>"moblarbi@gmail.com", "password"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (60.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "moblarbi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (7.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mob larbi"], ["email", "moblarbi@gmail.com"], ["password_digest", "$2a$12$CMmx3N.dhRfAnP0B11RWuOdPgjcaijbiTqnUYlSBnAwOFOiiGyF1K"], ["created_at", "2020-09-30 08:50:30.310910"], ["updated_at", "2020-09-30 08:50:30.310910"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (412.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "moblarbi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "moblarbi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 201 Created in 3359ms (Views: 99.4ms | ActiveRecord: 552.2ms | Allocations: 11769)
+
+
+Started POST "/signin?email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:53:21 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/signin"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin?email=moblarbi@gmail.com&password=[FILTERED]" for ::1 at 2020-09-30 08:53:59 +0000
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"moblarbi@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "moblarbi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "moblarbi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 1117ms (Views: 1.2ms | ActiveRecord: 0.8ms | Allocations: 1441)
+
+
