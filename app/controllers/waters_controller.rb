@@ -1,5 +1,4 @@
 class WatersController < ApplicationController
-  # skip_before_action :authorize_request, only: :authenticate
   before_action :set_water, only: [:show, :updated, :destroy]
 
   def index

@@ -4,12 +4,12 @@ class AuthenticationController < ApplicationController
   def authenticate
     auth_token =
       AuthenticateUser.new(auth_params[:email], auth_params[:password]).call
-    render json: { auth_token: auth_token }
+    json_response(auth_token: auth_token, message: "Log in successful!!!" )
   end
   
   private
   
   def auth_params
-    params.permit(:name, :email, :password)
+    params.permit(:email, :password)
   end
 end
