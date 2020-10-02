@@ -2876,3 +2876,534 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auto_login" for ::1 at 2020-10-02 08:18:50 +0000
+  [1m[35m (19.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auto_login" for ::1 at 2020-10-02 08:22:31 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin" for ::1 at 2020-10-02 08:22:43 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (28.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 1784ms (Views: 230.4ms | ActiveRecord: 337.3ms | Allocations: 7552)
+
+
+Started GET "/auto_login" for ::1 at 2020-10-02 08:23:23 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin" for ::1 at 2020-10-02 08:23:42 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 733ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1475)
+
+
+Started GET "/auto_login" for ::1 at 2020-10-02 08:26:23 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin" for ::1 at 2020-10-02 08:26:36 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 749ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1475)
+
+
+Started GET "/auto_login" for ::1 at 2020-10-02 08:27:12 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin" for ::1 at 2020-10-02 08:27:29 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 743ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1470)
+
+
+Started GET "/auto_login" for ::1 at 2020-10-02 08:28:08 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin" for ::1 at 2020-10-02 08:28:22 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 757ms (Views: 1.8ms | ActiveRecord: 2.3ms | Allocations: 1458)
+
+
+Started GET "/auto_login" for ::1 at 2020-10-02 08:28:41 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/auth/signin" for ::1 at 2020-10-02 08:29:00 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 733ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 1453)
+
+
+Started GET "/auto_login" for ::1 at 2020-10-02 08:29:46 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auto_login"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/signup" for ::1 at 2020-10-02 08:30:19 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"raj raj", "email"=>"raj@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"raj raj", "email"=>"raj@gmail.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raj@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 325ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 4879)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 08:31:00 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"raj raj", "email"=>"raj@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"raj raj", "email"=>"raj@gmail.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raj@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 9ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 3383)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 08:32:28 +0000
+  
+SyntaxError (/home/daniel/Desktop/projects/track_it/app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+    p @user
+    ^
+):
+  
+app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+Started POST "/signup" for ::1 at 2020-10-02 08:33:20 +0000
+  
+SyntaxError (/home/daniel/Desktop/projects/track_it/app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+    puts ` #{@user} `
+    ^~~~
+):
+  
+app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+Started POST "/signup" for ::1 at 2020-10-02 08:33:23 +0000
+  
+SyntaxError (/home/daniel/Desktop/projects/track_it/app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+    puts ` #{@user} `
+    ^~~~
+):
+  
+app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+app/controllers/users_controller.rb:8: syntax error, unexpected local variable or method, expecting ')'
+Started POST "/signup" for ::1 at 2020-10-02 08:34:10 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"raj raj", "email"=>"raj@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"raj raj", "email"=>"raj@gmail.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raj@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 33ms (Views: 0.9ms | ActiveRecord: 11.2ms | Allocations: 6593)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 08:34:55 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"raj raj", "email"=>"raj@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"raj raj", "email"=>"raj@gmail.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "raj@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 25ms (Views: 1.0ms | ActiveRecord: 5.0ms | Allocations: 6573)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 08:41:03 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Nick", "email"=>"nick@nick.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Nick", "email"=>"nick@nick.com"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nick@nick.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 422 Unprocessable Entity in 25ms (Views: 1.9ms | ActiveRecord: 6.6ms | Allocations: 9127)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 09:03:35 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Nick", "email"=>"nick@nick.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Nick", "email"=>"nick@nick.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nick@nick.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 0.7ms | ActiveRecord: 1.6ms | Allocations: 3829)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 09:04:13 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Nick", "email"=>"nick@nick.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Nick", "email"=>"nick@nick.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nick@nick.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 24ms (Views: 1.0ms | ActiveRecord: 8.9ms | Allocations: 6972)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 09:04:31 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Nicko", "email"=>"nicko@nick.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Nicko", "email"=>"nicko@nick.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko@nick.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 19ms (Views: 0.7ms | ActiveRecord: 3.4ms | Allocations: 3381)
+
+
+Started POST "/signup" for ::1 at 2020-10-02 09:07:41 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Nicko", "email"=>"nicko@nick.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Nicko", "email"=>"nicko@nick.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko@nick.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (191.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nicko"], ["email", "nicko@nick.com"], ["password_digest", "$2a$12$8fdVEVrkflV/SoTPSf3QQuRGbVCUFKp9Aogyb832eQcwWi1ApzXVi"], ["created_at", "2020-10-02 09:07:41.757769"], ["updated_at", "2020-10-02 09:07:41.757769"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (423.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko@nick.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko@nick.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 201 Created in 1863ms (Views: 2.1ms | ActiveRecord: 623.9ms | Allocations: 9767)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-02 09:23:30 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"nicko@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nicko@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.2ms | Allocations: 2521)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError
+Did you mean?  AuthenticateUser):
+  
+app/auth/authenticate_user.rb:20:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:6:in `authenticate'
+Started POST "/auth/signin" for ::1 at 2020-10-02 09:38:09 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"nicko@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nicko@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+Completed 500 Internal Server Error in 463ms (ActiveRecord: 4.5ms | Allocations: 4093)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError
+Did you mean?  AuthenticateUser):
+  
+app/auth/authenticate_user.rb:20:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:6:in `authenticate'
+Started POST "/auth/signin" for ::1 at 2020-10-02 09:38:33 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"nicko9@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"nicko9@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nicko9@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 2365)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError
+Did you mean?  AuthenticateUser):
+  
+app/auth/authenticate_user.rb:20:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:6:in `authenticate'
+Started POST "/auth/signin" for ::1 at 2020-10-02 09:45:59 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"gred@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"gred@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 577)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-02 09:58:58 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/waters/:undefined" for ::1 at 2020-10-02 09:59:02 +0000
+  
+SyntaxError (/home/daniel/Desktop/projects/track_it/app/controllers/waters_controller.rb:12: syntax error, unexpected ':', expecting '}'
+      render json { status: :created, water: water}
+                          ^
+/home/daniel/Desktop/projects/track_it/app/controllers/waters_controller.rb:14: syntax error, unexpected tLABEL, expecting '='
+...r.errors.full_messages, status: 401 }
+...                        ^~~~~~~
+):
+  
+app/controllers/waters_controller.rb:12: syntax error, unexpected ':', expecting '}'
+app/controllers/waters_controller.rb:14: syntax error, unexpected tLABEL, expecting '='
+app/controllers/waters_controller.rb:12: syntax error, unexpected ':', expecting '}'
+app/controllers/waters_controller.rb:14: syntax error, unexpected tLABEL, expecting '='
