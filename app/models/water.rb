@@ -1,6 +1,6 @@
 class Water < ApplicationRecord
   belongs_to :user
-  has_many :water_levels
+  has_many :water_level
 
   scope :user_water, lambda { |id|
     where(user_id: id)
