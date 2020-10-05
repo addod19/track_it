@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :waters
 
   post '/signup', to: 'users#create'
-  post 'auth/signin', to: 'authentication#authenticate'
+  get 'auth/signin', to: 'authentication#authenticate'
   # get '/auto_login', to: proc { [200, {}, ['']] }
 end

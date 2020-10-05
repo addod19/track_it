@@ -9,9 +9,13 @@ class WatersController < ApplicationController
   def create
     water = Water.create!(water_params)
     if water
-      render json { status: :created, water: water}
+      response = { message: Message.water_created }
+      json_response(response, :created)
+      # render json { status: :created, water: water}
     else
-      render json { water.errors.full_messages, status: 401 }
+      # json_response(message: "Could not create data !!!")
+      # render json { water.errors.full_messages, status: 401 }
+      render json: { error: water.errors.full_messages }
     end
   end
 
@@ -19,7 +23,7 @@ class WatersController < ApplicationController
     if @set_water
       render json: @set_water
     else
-      render json: @set_water.errors.full_messages, status: 401
+      render json: @set_water.errors.full_messages
     end
   end
 
