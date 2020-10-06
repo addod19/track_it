@@ -5730,3 +5730,48 @@ app/auth/authorize_api_request.rb:21:in `decoded_auth_token'
 app/auth/authorize_api_request.rb:15:in `user'
 app/auth/authorize_api_request.rb:7:in `call'
 app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/waters" for ::1 at 2020-10-06 11:12:26 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"amount"=>"36.00", "total"=>"44", "water"=>{"amount"=>"36.00", "total"=>"44"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1705)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::InvalidToken):
+  
+app/lib/json_web_token.rb:16:in `rescue in decode'
+app/lib/json_web_token.rb:11:in `decode'
+app/auth/authorize_api_request.rb:21:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:15:in `user'
+app/auth/authorize_api_request.rb:7:in `call'
+app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/waters" for ::1 at 2020-10-06 11:27:21 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"amount"=>"36.00", "total"=>"36", "water"=>{"amount"=>"36.00", "total"=>"36"}}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 1705)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::InvalidToken):
+  
+app/lib/json_web_token.rb:16:in `rescue in decode'
+app/lib/json_web_token.rb:11:in `decode'
+app/auth/authorize_api_request.rb:21:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:15:in `user'
+app/auth/authorize_api_request.rb:7:in `call'
+app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/waters" for ::1 at 2020-10-06 11:27:22 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"amount"=>"36.00", "total"=>"36", "water"=>{"amount"=>"36.00", "total"=>"36"}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1705)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::InvalidToken):
+  
+app/lib/json_web_token.rb:16:in `rescue in decode'
+app/lib/json_web_token.rb:11:in `decode'
+app/auth/authorize_api_request.rb:21:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:15:in `user'
+app/auth/authorize_api_request.rb:7:in `call'
+app/controllers/application_controller.rb:11:in `authorize_request'
