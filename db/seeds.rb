@@ -6,3 +6,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+waters = Water.create([
+    { amount: 23, total: 23},
+    { amount: 40, total: 44},
+    { amount: 32, total: 33},
+    { amount 22, total: 26}
+])
