@@ -11,10 +11,7 @@ class WatersController < ApplicationController
     if water
       response = { message: Message.water_created }
       json_response(response, :created)
-      # render json { status: :created, water: water}
     else
-      # json_response(message: "Could not create data !!!")
-      # render json { water.errors.full_messages, status: 401 }
       render json: { error: water.errors.full_messages }
     end
   end
