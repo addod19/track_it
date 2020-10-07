@@ -8,7 +8,7 @@ class Message
   end
 
   def self.invalid_token
-    'Invalid token'
+    'Invalid token', @user
   end
 
   def self.missing_token
