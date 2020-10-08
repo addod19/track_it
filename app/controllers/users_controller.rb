@@ -12,9 +12,6 @@ class UsersController < ApplicationController
         email: @user.email
       }, auth_token: auth_token }
     else
-    # response = { message: Message.account_created, auth_token: auth_token, user: @user }
-    # debugger
-    # json_response(response, :created)
       render json: { error: @user.errors.full_messages }, status: :unauthorized
     end
   end
