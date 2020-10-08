@@ -1,10 +1,12 @@
 class AuthorizeApiRequest
+  prepend SimpleCommand
+
   def initialize(headers = {})
     @headers = headers
   end
 
   def call
-    { user: user }
+    user
   end
 
   private
@@ -13,9 +15,7 @@ class AuthorizeApiRequest
 
   def user
     @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
-    debugger
-  rescue ActiveRecord::RecordNotFound => e
-    raise(ExceptionHandler::InvalidToken, ("#{Message.invalid_token} #{e.message}"))
+    @user || errors.add(:token, 'Invalid token') && nil
   end
 
   def decoded_auth_token
@@ -23,8 +23,11 @@ class AuthorizeApiRequest
   end
 
   def http_auth_header
-    return headers['Authorization'].split(' ').last if headers['Authorization'].present?
-
-    raise(ExceptionHandler::MissingToken, Message.missing_token)
+    if headers['Authorization'].present?
+      return headers['Authorization'].split(' ').last
+    else
+      errors.add(:token, 'Missing token')
+    end
+    nil
   end
 end

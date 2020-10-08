@@ -14,6 +14,7 @@ gem 'puma', '~> 4.1'
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'hirb', '~> 0.7.3'
+gem 'simple_command'
 # faster performance
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
