@@ -10,5 +10,4 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#create'
   post 'auth/signin', to: 'authentication#authenticate'
-  # get '/auto_login', to: proc { [200, {}, ['']] }
 end

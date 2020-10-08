@@ -7149,3 +7149,247 @@ app/auth/authorize_api_request.rb:22:in `decoded_auth_token'
 app/auth/authorize_api_request.rb:15:in `user'
 app/auth/authorize_api_request.rb:7:in `call'
 app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/auth/signin" for ::1 at 2020-10-08 08:04:44 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"apempe@dc.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"apempe@dc.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 1444ms (Views: 1.3ms | ActiveRecord: 2.2ms | Allocations: 1556)
+
+
+Started POST "/signup" for ::1 at 2020-10-08 08:05:29 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"fresh", "email"=>"fres@fr.com", "password"=>"[FILTERED]", "user"=>{"name"=>"fresh", "email"=>"fres@fr.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fres@fr.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "fresh"], ["email", "fres@fr.com"], ["password_digest", "$2a$12$yb2SylJmAtb/.5owKaCZ2u.RpV6.LVriVOqjZioaWseMpJCDD6wXS"], ["created_at", "2020-10-08 08:05:30.736742"], ["updated_at", "2020-10-08 08:05:30.736742"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (101.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fres@fr.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fres@fr.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.42ms)
+Completed 201 Created in 2111ms (Views: 1.2ms | ActiveRecord: 104.8ms | Allocations: 5111)
+
+
+Started POST "/waters" for ::1 at 2020-10-08 08:05:53 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"amount"=>"12", "total"=>"12", "user_id"=>{}, "water"=>{"amount"=>"12", "total"=>"12", "user_id"=>{}}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1682)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::InvalidToken):
+  
+app/lib/json_web_token.rb:16:in `rescue in decode'
+app/lib/json_web_token.rb:11:in `decode'
+app/auth/authorize_api_request.rb:22:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:15:in `user'
+app/auth/authorize_api_request.rb:7:in `call'
+app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/signup" for ::1 at 2020-10-08 08:19:11 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"nuser", "email"=>"nuser@n.com", "password"=>"[FILTERED]", "user"=>{"name"=>"nuser", "email"=>"nuser@n.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nuser@n.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "nuser"], ["email", "nuser@n.com"], ["password_digest", "$2a$12$PJldWXZQqPNqh/AC0ALqH.CCqKlNWCFbonNqTf1cGMgDE8etPQUuK"], ["created_at", "2020-10-08 08:19:12.391510"], ["updated_at", "2020-10-08 08:19:12.391510"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (111.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nuser@n.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nuser@n.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 201 Created in 1991ms (Views: 1.3ms | ActiveRecord: 115.8ms | Allocations: 5211)
+
+
+Started POST "/waters" for ::1 at 2020-10-08 08:19:31 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"amount"=>"12", "total"=>"12", "water"=>{"amount"=>"12", "total"=>"12"}}
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 1682)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::InvalidToken):
+  
+app/lib/json_web_token.rb:16:in `rescue in decode'
+app/lib/json_web_token.rb:11:in `decode'
+app/auth/authorize_api_request.rb:22:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:15:in `user'
+app/auth/authorize_api_request.rb:7:in `call'
+app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/signup" for ::1 at 2020-10-08 08:21:32 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"fuser", "email"=>"fuser@bv.com", "password"=>"[FILTERED]", "user"=>{"name"=>"fuser", "email"=>"fuser@bv.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fuser@bv.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "fuser"], ["email", "fuser@bv.com"], ["password_digest", "$2a$12$mDk4/2n.s/Yh4bVoJu/qu.7Auq4bRVX13ji/kmq0yQt1jjpEHxa.."], ["created_at", "2020-10-08 08:21:32.831068"], ["updated_at", "2020-10-08 08:21:32.831068"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (92.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fuser@bv.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "fuser@bv.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 201 Created in 1865ms (Views: 1.6ms | ActiveRecord: 94.1ms | Allocations: 5094)
+
+
+Started POST "/waters" for ::1 at 2020-10-08 08:21:51 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"amount"=>"23", "total"=>"23", "water"=>{"amount"=>"23", "total"=>"23"}}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 1682)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::InvalidToken):
+  
+app/lib/json_web_token.rb:16:in `rescue in decode'
+app/lib/json_web_token.rb:11:in `decode'
+app/auth/authorize_api_request.rb:22:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:15:in `user'
+app/auth/authorize_api_request.rb:7:in `call'
+app/controllers/application_controller.rb:11:in `authorize_request'
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:29:45 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 1093ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 1555)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:31:43 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 1118ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1454)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:34:35 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 1097ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 1454)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:40:54 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 1090ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 1555)
+
+
+Started POST "/signup" for ::1 at 2020-10-08 10:41:33 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"alex", "email"=>"alex@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"alex", "email"=>"alex@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "alex"], ["email", "alex@gmail.com"], ["password_digest", "$2a$12$UbZTXwlL1lcmbQohCqU.8OaLNjBHXR3Cs82MAHOupvDh1UG2LtBWi"], ["created_at", "2020-10-08 10:41:33.781916"], ["updated_at", "2020-10-08 10:41:33.781916"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (23.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alex@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 201 Created in 1675ms (Views: 1.1ms | ActiveRecord: 27.1ms | Allocations: 5119)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:56:34 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 1102ms (Views: 1.4ms | ActiveRecord: 1.1ms | Allocations: 6131)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:59:10 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 4.3ms | Allocations: 1830)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.password does not exist
+LINE 1: ...rs".* FROM "users" WHERE "users"."email" = $1 AND "users"."p...
+                                                             ^
+):
+  
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/auth/signin" for ::1 at 2020-10-08 10:59:41 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 297)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.password does not exist
+LINE 1: ...rs".* FROM "users" WHERE "users"."email" = $1 AND "users"."p...
+                                                             ^
+):
+  
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/auth/signin" for ::1 at 2020-10-08 11:00:20 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+[31mUnpermitted parameter: :authentication[0m
+[31mUnpermitted parameter: :authentication[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:17:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 1156ms (Views: 1.6ms | ActiveRecord: 10.2ms | Allocations: 6766)
+
+
