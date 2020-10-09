@@ -1,4 +1,5 @@
 class WatersController < ApplicationController
+  before_action :authenticate_request
   before_action :set_water, only: [:show, :updated, :destroy]
 
   def index
@@ -7,10 +8,10 @@ class WatersController < ApplicationController
   end
 
   def create
-    water = Water.create!(water_params)
-    if water
+    water = @current_user.waters.build(amount: params[:amount], total: params[:total])
+    if water.save
       response = { message: Message.water_created }
-      json_response(response, :created)
+      render json: water
     else
       render json: { error: water.errors.full_messages }
     end
@@ -42,10 +43,6 @@ class WatersController < ApplicationController
 
 
   private
-
-  def water_params
-    params.permit(:amount, :total, :user_id)
-  end
 
   def set_water
     @set_water ||= Water.find(params[:id])

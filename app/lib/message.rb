@@ -23,6 +23,10 @@ class Message
     'Account created successfully'
   end
 
+  def self.water_created
+    'Water data created sucessfully'
+  end
+
   def self.account_not_created
     'Account could not be created'
   end
