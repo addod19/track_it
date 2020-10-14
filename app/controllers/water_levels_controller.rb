@@ -1,5 +1,5 @@
 class WaterLevelsController < ApplicationController
-  skip_before_action :authorize_request, only: :authenticate
+  skip_before_action :authenticate_request
   
   def progress
     water = Water.order_water_data
