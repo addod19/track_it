@@ -12457,3 +12457,72 @@ Filter chain halted as :authenticate_request rendered or redirected
 Completed 401 Unauthorized in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 209)
 
 
+Started POST "/auth/signin" for ::1 at 2020-10-16 17:01:45 +0000
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"apempe@dc.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"apempe@dc.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.85ms)
+Completed 200 OK in 1284ms (Views: 3.9ms | ActiveRecord: 15.3ms | Allocations: 8111)
+
+
+Started POST "/waters" for ::1 at 2020-10-16 17:01:56 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"4bd9f990-0fd1-11eb-a8fd-17fb4585b342", "amount"=>"23", "total"=>"34", "water"=>{"id"=>"4bd9f990-0fd1-11eb-a8fd-17fb4585b342", "amount"=>"23", "total"=>"34"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Started GET "/allData" for ::1 at 2020-10-16 17:01:56 +0000
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[36mWater Create (1.1ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 23], ["total", 34], ["created_at", "2020-10-16 17:01:56.469226"], ["updated_at", "2020-10-16 17:01:56.469226"], ["user_id", 17]]
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+Processing by WatersController#index as JSON
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 404 Not Found in 10ms (ActiveRecord: 3.3ms | Allocations: 1611)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.6ms)
+Completed 200 OK in 107ms (Views: 4.4ms | ActiveRecord: 25.2ms | Allocations: 13305)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water without an ID):
+  
+app/controllers/waters_controller.rb:7:in `index'
+Started POST "/auth/signin" for ::1 at 2020-10-16 18:13:09 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 200 OK in 1213ms (Views: 26.8ms | ActiveRecord: 9.0ms | Allocations: 8111)
+
+
+Started POST "/waters" for ::1 at 2020-10-16 18:13:23 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"4720abb0-0fdb-11eb-824b-1524b4032345", "amount"=>"12", "total"=>"12", "water"=>{"id"=>"4720abb0-0fdb-11eb-824b-1524b4032345", "amount"=>"12", "total"=>"12"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 22ms (Views: 1.0ms | ActiveRecord: 2.8ms | Allocations: 329)
+
+
+Started GET "/allData" for ::1 at 2020-10-16 18:13:23 +0000
+Processing by WatersController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 197)
+
+

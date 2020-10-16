@@ -3,7 +3,8 @@ class WatersController < ApplicationController
   before_action :set_water, only: [:show, :updated, :destroy]
 
   def index
-    water = Water.order_water_data
+    # water = Water.order_water_data
+    water = @current_user.waters.find(params[:id])
     render json :water
   end
 
