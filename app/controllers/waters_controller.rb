@@ -4,7 +4,8 @@ class WatersController < ApplicationController
 
   def index
     # water = Water.order_water_data
-    water = @current_user.waters.find(params[:id])
+    # water = @current_user.waters.find(params[:id])
+    water = Water.user_water(current_user)
     render json :water
   end
 

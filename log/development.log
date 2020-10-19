@@ -12526,3 +12526,410 @@ Filter chain halted as :authenticate_request rendered or redirected
 Completed 401 Unauthorized in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 197)
 
 
+Started POST "/auth/signin" for ::1 at 2020-10-19 07:03:04 +0000
+  [1m[35m (67.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"apempe@dc.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"apempe@dc.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (33.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.84ms)
+Completed 200 OK in 1379ms (Views: 150.7ms | ActiveRecord: 106.9ms | Allocations: 8111)
+
+
+Started POST "/waters" for ::1 at 2020-10-19 07:03:15 +0000
+Started GET "/allData" for ::1 at 2020-10-19 07:03:16 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"28fbad10-11d9-11eb-be41-616a5a4623c6", "amount"=>"12", "total"=>"30", "water"=>{"id"=>"28fbad10-11d9-11eb-be41-616a5a4623c6", "amount"=>"12", "total"=>"30"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 85ms (Views: 1.2ms | ActiveRecord: 2.6ms | Allocations: 763)
+
+
+Processing by WatersController#index as JSON
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 283)
+
+
+Started GET "/water_levels/progress" for ::1 at 2020-10-19 07:03:24 +0000
+Processing by WaterLevelsController#progress as JSON
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 738)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/models/water.rb:9:in `block in <class:Water>'
+app/controllers/water_levels_controller.rb:5:in `progress'
+Started GET "/water_levels/progress" for ::1 at 2020-10-19 07:18:52 +0000
+Processing by WaterLevelsController#progress as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 632)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/models/water.rb:9:in `block in <class:Water>'
+app/controllers/water_levels_controller.rb:5:in `progress'
+Started POST "/auth/signin" for ::1 at 2020-10-19 07:43:15 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"acer2@gr.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"acer2@gr.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "acer2@gr.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "acer2@gr.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "acer2@gr.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.42ms)
+Completed 200 OK in 1073ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 2034)
+
+
+Started POST "/waters" for ::1 at 2020-10-19 07:43:36 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"cbbc0180-11de-11eb-a8b3-43d7610772ee", "amount"=>"30", "total"=>"33", "water"=>{"id"=>"cbbc0180-11de-11eb-a8b3-43d7610772ee", "amount"=>"30", "total"=>"33"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[36mWater Create (100.3ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 30], ["total", 33], ["created_at", "2020-10-19 07:43:36.560364"], ["updated_at", "2020-10-19 07:43:36.560364"], ["user_id", 62]]
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[35m (224.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.29ms)
+Completed 200 OK in 512ms (Views: 1.1ms | ActiveRecord: 328.4ms | Allocations: 10269)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-19 09:15:34 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"apempe@dc.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"apempe@dc.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 331ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 1364)
+
+
+Started POST "/auth/signin" for ::1 at 2020-10-19 09:17:11 +0000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 200 OK in 872ms (Views: 27.1ms | ActiveRecord: 6.8ms | Allocations: 8107)
+
+
+Started POST "/waters" for ::1 at 2020-10-19 09:17:25 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"e6dd6d70-11eb-11eb-b65d-cba1aeb5566e", "amount"=>"23", "total"=>"30", "water"=>{"id"=>"e6dd6d70-11eb-11eb-b65d-cba1aeb5566e", "amount"=>"23", "total"=>"30"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[36mWater Create (1.7ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 23], ["total", 30], ["created_at", "2020-10-19 09:17:25.690816"], ["updated_at", "2020-10-19 09:17:25.690816"], ["user_id", 78]]
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.66ms)
+Completed 200 OK in 184ms (Views: 2.5ms | ActiveRecord: 30.0ms | Allocations: 9149)
+
+
+Started GET "/waters/undefined" for ::1 at 2020-10-19 10:31:33 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.5ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 20ms (ActiveRecord: 9.6ms | Allocations: 1549)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:03:06 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.2ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1419)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started DELETE "/waters/undefined" for ::1 at 2020-10-19 11:03:08 +0000
+Processing by WatersController#destroy as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.5ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms | Allocations: 1295)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:05:58 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (1.6ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 8ms (ActiveRecord: 2.0ms | Allocations: 1295)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:08:06 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (1.3ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 6ms (ActiveRecord: 2.9ms | Allocations: 1295)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started POST "/auth/signin" for ::1 at 2020-10-19 11:08:48 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"ksd123@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ksd123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.41ms)
+Completed 200 OK in 1055ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 1950)
+
+
+Started POST "/waters" for ::1 at 2020-10-19 11:08:57 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"7b961930-11fb-11eb-8490-d3c2deec3978", "amount"=>"34", "total"=>"54", "water"=>{"id"=>"7b961930-11fb-11eb-8490-d3c2deec3978", "amount"=>"34", "total"=>"54"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[36mWater Create (2.2ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 34], ["total", 54], ["created_at", "2020-10-19 11:08:57.346846"], ["updated_at", "2020-10-19 11:08:57.346846"], ["user_id", 17]]
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:08:57 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.5ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.5ms | Allocations: 1420)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+  [1m[35m (98.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.39ms)
+Completed 200 OK in 115ms (Views: 1.1ms | ActiveRecord: 103.3ms | Allocations: 35187)
+
+
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:40:22 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.5ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 14ms (ActiveRecord: 3.2ms | Allocations: 1420)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started POST "/auth/signin" for ::1 at 2020-10-19 11:40:38 +0000
+Processing by AuthenticationController#authenticate as JSON
+  Parameters: {"email"=>"apempe@dc.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"apempe@dc.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "apempe@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 200 OK in 1068ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1950)
+
+
+Started POST "/waters" for ::1 at 2020-10-19 11:40:49 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"ef0e5a40-11ff-11eb-9522-db9283f1b370", "amount"=>"23", "total"=>"24", "water"=>{"id"=>"ef0e5a40-11ff-11eb-9522-db9283f1b370", "amount"=>"23", "total"=>"24"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:40:49 +0000
+  [1m[36mWater Create (5.9ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 23], ["total", 24], ["created_at", "2020-10-19 11:40:49.057283"], ["updated_at", "2020-10-19 11:40:49.057283"], ["user_id", 17]]
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  ↳ app/controllers/waters_controller.rb:13:in `create'
+  [1m[36mWater Load (0.7ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.39ms)
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 200 OK in 49ms (Views: 2.2ms | ActiveRecord: 24.3ms | Allocations: 7470)
+
+
+Completed 404 Not Found in 13ms (ActiveRecord: 4.8ms | Allocations: 2160)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:48:32 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.3ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 7ms (ActiveRecord: 1.2ms | Allocations: 1419)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:48:44 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (0.5ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 7ms (ActiveRecord: 2.5ms | Allocations: 1295)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+Started GET "/waters/undefined" for ::1 at 2020-10-19 11:56:14 +0000
+Processing by WatersController#show as JSON
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[36mWater Load (1.6ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/waters_controller.rb:49:in `set_water'
+Completed 404 Not Found in 10ms (ActiveRecord: 4.2ms | Allocations: 1419)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Water with 'id'=undefined):
+  
+app/controllers/waters_controller.rb:49:in `set_water'
+  [1m[36mWater Load (18.5ms)[0m  [1m[34mSELECT "waters".* FROM "waters" WHERE "waters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/waters" for ::1 at 2020-10-19 15:19:51 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"88930f30-121e-11eb-a536-d5b5a3d99706", "amount"=>"12", "total"=>"12", "water"=>{"id"=>"88930f30-121e-11eb-a536-d5b5a3d99706", "amount"=>"12", "total"=>"12"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+  [1m[36mWater Create (0.6ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 12], ["total", 12], ["created_at", "2020-10-19 15:19:52.947969"], ["updated_at", "2020-10-19 15:19:52.947969"], ["user_id", 62]]
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+  [1m[35m (66.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.35ms)
+Completed 200 OK in 145ms (Views: 1.7ms | ActiveRecord: 67.9ms | Allocations: 11246)
+
+
+Started GET "/allData" for ::1 at 2020-10-19 15:27:22 +0000
+Processing by WatersController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.1ms | Allocations: 32056)
+
+
+  
+NoMethodError (undefined method `json' for #<WatersController:0x00007f9b3c011df8>
+Did you mean?  JSON):
+  
+app/controllers/waters_controller.rb:9:in `index'
+Started POST "/waters" for ::1 at 2020-10-19 15:44:50 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"060aef20-1222-11eb-84d9-d3c52e7b82a7", "amount"=>"34", "total"=>"34", "water"=>{"id"=>"060aef20-1222-11eb-84d9-d3c52e7b82a7", "amount"=>"34", "total"=>"34"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+  [1m[36mWater Create (0.8ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 34], ["total", 34], ["created_at", "2020-10-19 15:44:50.606803"], ["updated_at", "2020-10-19 15:44:50.606803"], ["user_id", 62]]
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+  [1m[35m (17.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (0.5ms)
+Completed 200 OK in 41ms (Views: 1.3ms | ActiveRecord: 26.1ms | Allocations: 3572)
+
+
+Started POST "/signup" for ::1 at 2020-10-19 15:47:14 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"constance", "email"=>"conny@dc.com", "password"=>"[FILTERED]", "user"=>{"name"=>"constance", "email"=>"conny@dc.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "conny@dc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (57.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "constance"], ["email", "conny@dc.com"], ["password_digest", "$2a$12$GraNTLQmF/RPDRPHp8xH9eXsDMqNNuv0d5i4qOLF2SM5TDYJM88XG"], ["created_at", "2020-10-19 15:47:14.917027"], ["updated_at", "2020-10-19 15:47:14.917027"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (28.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "conny@dc.com"], ["id", 100], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "conny@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "conny@dc.com"], ["LIMIT", 1]]
+  ↳ app/auth/authenticate_user.rb:19:in `user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 1607ms (Views: 0.9ms | ActiveRecord: 87.6ms | Allocations: 6575)
+
+
+Started POST "/waters" for ::1 at 2020-10-19 15:48:08 +0000
+Processing by WatersController#create as JSON
+  Parameters: {"id"=>"7bbd6590-1222-11eb-ba35-57402c7f15c2", "amount"=>"23", "total"=>"24", "water"=>{"id"=>"7bbd6590-1222-11eb-ba35-57402c7f15c2", "amount"=>"23", "total"=>"24"}}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/auth/authorize_api_request.rb:17:in `user'
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+  [1m[36mWater Create (5.0ms)[0m  [1m[32mINSERT INTO "waters" ("amount", "total", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 23], ["total", 24], ["created_at", "2020-10-19 15:48:08.017977"], ["updated_at", "2020-10-19 15:48:08.017977"], ["user_id", 62]]
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/waters_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Water (1.06ms)
+Completed 200 OK in 32ms (Views: 1.8ms | ActiveRecord: 17.6ms | Allocations: 3465)
+
+
