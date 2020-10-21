@@ -6,7 +6,7 @@ class WatersController < ApplicationController
     # water = Water.order_water_data
     # water = @current_user.waters.find(params[:id])
     water = Water.user_water(current_user)
-    render json :water
+    render json: water
   end
 
   def create
