@@ -8,12 +8,12 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
+gem 'active_model_serializers'
 gem 'bcrypt'
+gem 'hirb', '~> 0.7.3'
 gem 'jwt'
 gem 'puma', '~> 4.1'
 gem 'rack-cors'
-gem 'active_model_serializers'
-gem 'hirb', '~> 0.7.3'
 gem 'simple_command'
 # faster performance
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

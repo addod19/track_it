@@ -1,6 +1,6 @@
 class WatersController < ApplicationController
   before_action :authenticate_request
-  before_action :set_water, only: [:show, :updated, :destroy]
+  before_action :set_water, only: %i[show updated destroy]
 
   def index
     water = Water.user_water(current_user)
@@ -10,8 +10,8 @@ class WatersController < ApplicationController
   def create
     water = @current_user.waters.build(amount: params[:amount], total: params[:total])
     if water.save
-      response = { message: Message.water_created }
-      render json: water
+      # response = { message: Message.water_created }
+      render json: water, status: :created
     else
       render json: { error: water.errors.full_messages }
     end
@@ -34,13 +34,12 @@ class WatersController < ApplicationController
   end
 
   def destroy
-    if @set_water && @set_water.destroy
-      render json: { message: "Water record deleted successfully", status: 201 }
+    if @set_water&.destroy
+      render json: { message: 'Water record deleted successfully', status: 201 }
     else
-      render json: { messages: "Water record could not be deleted", status: 401 }
+      render json: { messages: 'Water record could not be deleted', status: 401 }
     end
   end
-
 
   private
 
