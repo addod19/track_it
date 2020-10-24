@@ -9,6 +9,7 @@ class WatersController < ApplicationController
 
   def create
     water = @current_user.waters.build(amount: params[:amount], total: params[:total])
+    byebug
     if water.save
       # response = { message: Message.water_created }
       render json: water, status: :created
