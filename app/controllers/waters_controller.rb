@@ -18,6 +18,7 @@ class WatersController < ApplicationController
   # end
   def create
     @water= Water.new(water_params)
+    @water.user_id = @current_user
     if @water.save
       render json: @water, status: :created
     else
