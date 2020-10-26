@@ -26,12 +26,15 @@ class AuthorizeApiRequest
     # return headers['Authorization'].split('').last unless headers['Authorization'].present?
     # errors.add(:token, 'Missing token')
     # nil
-    if headers['Authorization'].present?
-      return headers['Authorization'].split(' ').last
-    else
-      errors.add(:token, 'Missing token')
-    end
+    # if headers['Authorization'].present?
+    #   return headers['Authorization'].split(' ').last
+    # else
+    #   errors.add(:token, 'Missing token')
+    # end
 
-    nil
+    # nil
+    return headers['Authorization'].split(' ').last if headers['Authorization'].present?
+
+    raise(ExceptionHandler::MissingToken, Message.missing_token)
   end
 end
