@@ -7,13 +7,21 @@ class WatersController < ApplicationController
     render json: water
   end
 
+  # def create
+  #   water = @current_user.waters.build(amount: params[:amount], total: params[:total])
+  #   if water.save
+  #     # response = { message: Message.water_created }
+  #     render json: water, status: :created
+  #   else
+  #     render json: { error: water.errors.full_messages }
+  #   end
+  # end
   def create
-    water = @current_user.waters.build(amount: params[:amount], total: params[:total])
-    if water.save
-      # response = { message: Message.water_created }
-      render json: water, status: :created
+    @water= Water.new(water_params)
+    if @water.save
+      render json: @water, status: :created
     else
-      render json: { error: water.errors.full_messages }
+      render json: @water.errors, status: :unprocessable_entity
     end
   end
 
@@ -42,6 +50,10 @@ class WatersController < ApplicationController
   end
 
   private
+
+  def water_params
+    params.require(:water).permit(:amount, :total, :user_id)
+  end
 
   def set_water
     @set_water ||= Water.find(params[:id])
