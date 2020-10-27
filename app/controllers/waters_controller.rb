@@ -16,15 +16,6 @@ class WatersController < ApplicationController
       render json: { error: water.errors.full_messages }
     end
   end
-  # def create
-  #   @water= Water.new(water_params)
-  #   @water.user_id = @current_user
-  #   if @water.save
-  #     render json: @water, status: :created
-  #   else
-  #     render json: @water.errors, status: :unprocessable_entity
-  #   end
-  # end
 
   def show
     if @set_water
