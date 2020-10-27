@@ -8,7 +8,7 @@ class WatersController < ApplicationController
   end
 
   def create
-    water = @current_user.waters.build(amount: params[:amount], total: params[:total])
+    water = @current_user.waters.build(amount: params[:amount], total: params[:total], user_id: current_user)
     if water.save
       # response = { message: Message.water_created }
       render json: water, status: :created
@@ -42,6 +42,10 @@ class WatersController < ApplicationController
   end
 
   private
+
+  def water_params
+    params.require(:water).permit(:amount, :total, :user_id)
+  end
 
   def set_water
     @set_water ||= Water.find(params[:id])
