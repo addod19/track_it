@@ -7,24 +7,24 @@ class WatersController < ApplicationController
     render json: water
   end
 
-  # def create
-  #   water = @current_user.waters.build(amount: params[:amount], total: params[:total])
-  #   if water.save
-  #     # response = { message: Message.water_created }
-  #     render json: water, status: :created
-  #   else
-  #     render json: { error: water.errors.full_messages }
-  #   end
-  # end
   def create
-    @water= Water.new(water_params)
-    @water.user_id = @current_user
-    if @water.save
-      render json: @water, status: :created
+    water = @current_user.waters.build(amount: params[:amount], total: params[:total], user_id: current_user)
+    if water.save
+      # response = { message: Message.water_created }
+      render json: water, status: :created
     else
-      render json: @water.errors, status: :unprocessable_entity
+      render json: { error: water.errors.full_messages }
     end
   end
+  # def create
+  #   @water= Water.new(water_params)
+  #   @water.user_id = @current_user
+  #   if @water.save
+  #     render json: @water, status: :created
+  #   else
+  #     render json: @water.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   def show
     if @set_water
