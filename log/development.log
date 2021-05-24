@@ -15693,3 +15693,11 @@ No serializer found for resource: #<Water id: 196, amount: 32, total: 34, create
 Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 4.0ms | Allocations: 1981)
 
 
+Started GET "/" for ::1 at 2021-05-24 09:45:20 +0000
+  [1m[35m (134.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/daniel/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/daniel/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 53.6ms | Allocations: 313)
+Completed 200 OK in 305ms (Views: 106.2ms | ActiveRecord: 0.0ms | Allocations: 1631)
+
+
